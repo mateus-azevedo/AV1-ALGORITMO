@@ -1,7 +1,7 @@
 #include<iostream>
 #include<stdlib.h>
 #define MAX 2
-#define CASA 10
+#define CASA 3
 using namespace std;
 
 void atribuiValores(char A[][CASA], char B[][CASA], char C[][CASA], char D[][CASA])
@@ -60,27 +60,25 @@ int main()
 {
     char A[MAX][CASA], B[MAX][CASA];
 
-    // for(int j = 0; j < 2; j++)
-    // {
-    //     for(int i = 0; i < MAX; i++)
-    //         for(int j = 0; j < CASA; j++)
-    //         {
-    //             (j == 0) ? cout<<"Valor de A["<<i+1<<"]: " : cout<<"Valor de B["<<i+1<<"]: "; 
-    //             (j == 0) ? cin>>A[i][j] : cin>>B[i][j];
-    //         }
-    //     cout<<endl;
-    // }
+    for(int j = 0; j < 2; j++)
+    {
+        for(int i = 0; i < MAX; i++)
+            for(int j = 0; j < CASA; j++)
+             {
+                 (j == 0) ? cout<<"Valor de A["<<i+1<<"]: " : cout<<"Valor de B["<<i+1<<"]: "; 
+                 (j == 0) ? cin>>A[i][j] : cin>>B[i][j];
+             }
+         cout<<endl;
+     }
 
     system("cls");
 
-    // exibeTela('A', A);
-    // exibeTela('B', B);
+    exibeTela('A', A);
+    exibeTela('B', B);
     cout<<endl<<endl;
 
     char C[MAX][CASA], D[MAX][CASA];
 
-    inicializaVetor(A);
-    inicializaVetor(B);
     inicializaVetor(C);
     inicializaVetor(D);
 
