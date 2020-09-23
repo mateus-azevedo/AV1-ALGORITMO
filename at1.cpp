@@ -1,6 +1,7 @@
 #include<iostream>
 #include<stdlib.h>
 #define MAX 2
+#define CASA 10
 using namespace std;
 
 void atribuiValores(char *A, char *B, char *C, char *D)
@@ -39,31 +40,34 @@ void exibeTela(char nome, char *vetor)
         printf("%c = {", nome); 
     
     for (int i = 0; i < MAX; i++)
-    {
-        if (vetor[i] != ' ')
-            cout<<vetor[i]<<", ";
-    }
+        for (int j = 0; j < CASA; j++)    
+        {
+            if (vetor[i][j] != ' ')
+                cout<<vetor[i][j]<<", ";
+        }
 
-    (vetor[MAX - 1] == ' ') ? printf(" } \t") : printf("\b\b} \t");
+    (vetor[MAX][CASA - 1] == ' ') ? printf(" } \t") : printf("\b\b} \t");
 }
 
 void inicializaVetor(char *vetor)
 {
     for(int i = 0; i < MAX; i++)
-        vetor[i] = ' '; 
+        for(int j=0; j < CASA; j++)
+            vetor[i][j] = ' '; 
 }
 
 int main()
 {
-    char A[MAX], B[MAX];
+    char A[MAX][CASA], B[MAX][CASA];
 
     for(int j = 0; j < 2; j++)
     {
         for(int i = 0; i < MAX; i++)
-        {
-            (j == 0) ? cout<<"Valor de A["<<i+1<<"]: " : cout<<"Valor de B["<<i+1<<"]: "; 
-            (j == 0) ? cin>>A[i] : cin>>B[i];
-        }
+            for(int j = 0; j < CASA; j++)
+            {
+                (j == 0) ? cout<<"Valor de A["<<i+1<<"]: " : cout<<"Valor de B["<<i+1<<"]: "; 
+                (j == 0) ? cin>>A[i][j] : cin>>B[i][j];
+            }
         cout<<endl;
     }
 
@@ -73,7 +77,7 @@ int main()
     exibeTela('B', B);
     cout<<endl<<endl;
 
-    char C[MAX], D[MAX];
+    char C[MAX][CASA], D[MAX][CASA];
 
     inicializaVetor(C);
     inicializaVetor(D);
