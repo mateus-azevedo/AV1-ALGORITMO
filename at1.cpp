@@ -54,6 +54,7 @@ void inicializaVetor(char vetor[][CASA])
     for(int i = 0; i < MAX; i++)
         for(int j = 0; j < CASA; j++)
             vetor[i][j] = ' '; 
+    vetor[MAX][CASA - 1] = ' ';
 }
 
 int main()
