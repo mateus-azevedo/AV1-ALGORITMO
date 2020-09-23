@@ -30,29 +30,29 @@ using namespace std;
 //     }
 // }
 
-// void exibeTela(char nome, char *vetor[][])
-// {
-//     if (nome == 'C')
-//         printf("%c (INTERSECAO) = {", nome); 
-//     else if (nome == 'D')
-//         printf("%c (DIFERENCA) = {", nome); 
-//     else
-//         printf("%c = {", nome); 
+void exibeTela(char nome, char vetor[][CASA])
+{
+    if (nome == 'C')
+        printf("%c (INTERSECAO) = {", nome); 
+    else if (nome == 'D')
+        printf("%c (DIFERENCA) = {", nome); 
+    else
+        printf("%c = {", nome); 
     
-//     for (int i = 0; i < MAX; i++)
-//         for (int j = 0; j < CASA; j++)    
-//         {
-//             if (vetor[i][j] != ' ')
-//                 cout<<vetor[i][j]<<", ";
-//         }
-
-//     (vetor[MAX][CASA - 1] == ' ') ? printf(" } \t") : printf("\b\b} \t");
-// }
+    for (int i = 0; i < MAX; i++)
+        for (int j = 0; j < CASA; j++)
+        {
+            if (vetor[i][j] != ' ')
+                cout<<vetor[i][j]<<", ";
+        }
+    (vetor[MAX][CASA - 1] == ' ') ? printf(" } \t") : printf("\b\b} \t");
+    cout<<"ESTOU NO "<<nome<<" : "<<vetor[MAX][CASA - 1]<<"\t";
+}
 
 void inicializaVetor(char vetor[][CASA])
 {
     for(int i = 0; i < MAX; i++)
-        for(int j=0; j < CASA; j++)
+        for(int j = 0; j < CASA; j++)
             vetor[i][j] = ' '; 
 }
 
@@ -82,16 +82,10 @@ int main()
     inicializaVetor(C);
     inicializaVetor(D);
 
-    cout<<"LLL"<<endl;
-    for (int i = 0; i < MAX; i++)
-    for (int j = 0; j < CASA; j++)
-        (i == (MAX - 1)) ? cout<<"fim" : cout<<C[i][j];
-    cout<<endl<<"UUU";
-
     // atribuiValores(A, B, C, D);
 
-    // exibeTela('C', C);
-    // exibeTela('D', D);
+    exibeTela('C', C);
+    exibeTela('D', D);
 
     return 0;
 }
