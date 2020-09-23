@@ -4,31 +4,31 @@
 #define CASA 10
 using namespace std;
 
-// void atribuiValores(char *A, char *B, char *C, char *D)
-// {
-//     for(int i = 0; i < MAX; i++)
-//     {
-//         for(int j = 0; j < MAX; j++)
-//         {
-//             if (A[i] == B[j])
-//                 C[i] = A[i];
-//         }
-//     }
+void atribuiValores(char A[][CASA], char B[][CASA], char C[][CASA], char D[][CASA])
+{
+    for(int i = 0; i < MAX; i++)
+    {
+        for(int j = 0; j < MAX; j++)
+        {
+            if (A[i][j] == B[j][i])
+                C[i][j] = A[i][j];
+        }
+    }
 
-//     for(int i = 0; i < MAX; i++)
-//     {
-//         for(int j = 0; j < MAX; j++)
-//         {
-//             if (A[i] != B[j])
-//                 D[i] = A[i];
-//             else
-//             {
-//                 D[i] = ' ';
-//                 break;
-//             }
-//         }
-//     }
-// }
+    for(int i = 0; i < MAX; i++)
+    {
+        for(int j = 0; j < MAX; j++)
+        {
+            if (A[i][j] != B[j][i])
+                D[i][j] = A[i][j];
+            else
+            {
+                D[i][j] = ' ';
+                break;
+            }
+        }
+    }
+}
 
 void exibeTela(char nome, char vetor[][CASA])
 {
@@ -46,7 +46,6 @@ void exibeTela(char nome, char vetor[][CASA])
                 cout<<vetor[i][j]<<", ";
         }
     (vetor[MAX][CASA - 1] == ' ') ? printf(" } \t") : printf("\b\b} \t");
-    cout<<"ESTOU NO "<<nome<<" : "<<vetor[MAX][CASA - 1]<<"\t";
 }
 
 void inicializaVetor(char vetor[][CASA])
@@ -80,10 +79,12 @@ int main()
 
     char C[MAX][CASA], D[MAX][CASA];
 
+    inicializaVetor(A);
+    inicializaVetor(B);
     inicializaVetor(C);
     inicializaVetor(D);
 
-    // atribuiValores(A, B, C, D);
+    atribuiValores(A, B, C, D);
 
     exibeTela('C', C);
     exibeTela('D', D);
