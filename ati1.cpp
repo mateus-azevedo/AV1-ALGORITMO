@@ -1,9 +1,9 @@
 #include<iostream>
 #include<stdlib.h>
-#define MAX 2
+#define MAX 5
 using namespace std;
 
-void atribuiValores(char *A, char *B, char *C, char *D)
+void atribuiValores(int *A, int *B, int *C, int *D)
 {
     for(int i = 0; i < MAX; i++)
     {
@@ -11,6 +11,8 @@ void atribuiValores(char *A, char *B, char *C, char *D)
         {
             if (A[i] == B[j])
                 C[i] = A[i];
+            // else
+                // C[i] = -1;
         }
     }
 
@@ -22,40 +24,41 @@ void atribuiValores(char *A, char *B, char *C, char *D)
                 D[i] = A[i];
             else
             {
-                D[i] = ' ';
+                D[i] = -1;
                 break;
             }
         }
     }
 }
 
-void exibeTela(char nome, char *vetor)
+void exibeTela(int nome, int *vetor)
 {
     if (nome == 'C')
-        printf("%c (INTERSECAO) = {", nome); 
+        printf("%c (INTERSECAO) = { ", nome); 
     else if (nome == 'D')
-        printf("%c (DIFERENCA) = {", nome); 
+        printf("%c (DIFERENCA) = { ", nome); 
     else
-        printf("%c = {", nome); 
+        printf("%c = { ", nome); 
     
     for (int i = 0; i < MAX; i++)
     {
-        if (vetor[i] != ' ')
-            cout<<vetor[i]<<", ";
+        if (vetor[i] != -1)
+            cout<<vetor[i]<<"  ";
     }
 
-    (vetor[MAX - 1] == ' ') ? printf(" } \t") : printf("\b\b} \t");
+    (vetor[MAX - 1] == -1) ? printf("\b} \t\t") : printf("\b} \t\t");
 }
 
-void inicializaVetor(char *vetor)
+void inicializaVetor(int *vetor)
 {
     for(int i = 0; i < MAX; i++)
-        vetor[i] = ' '; 
+        vetor[i] = -1;
+    vetor[MAX - 1] = -1;
 }
 
 int main()
 {
-    char A[MAX], B[MAX];
+    int A[MAX], B[MAX];
 
     for(int j = 0; j < 2; j++)
     {
@@ -73,7 +76,7 @@ int main()
     exibeTela('B', B);
     cout<<endl<<endl;
 
-    char C[MAX], D[MAX];
+    int C[MAX], D[MAX];
 
     inicializaVetor(C);
     inicializaVetor(D);
