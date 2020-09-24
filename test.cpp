@@ -2,6 +2,14 @@
 #include<stdlib.h>
 using namespace std;
 
+void inicializaVetor(char vetor[][3])
+{
+    for(int i = 0; i < 2; i++)
+        for(int j = 0; j < 3; j++)
+            vetor[i][j] = ' '; 
+    vetor[2][3 - 1] = ' ';
+}
+
 int main()
 {
     char vetor[2][3], vetor2[][3] = {"6", "5", "4", "3", "2", "1"};
@@ -12,10 +20,14 @@ int main()
         linha 2 {4, 5, 6}   linha 2 {3, 2, 1}
     */
     
+    inicializaVetor(vetor);
+    
     for (int i = 0; i < 2; i++)
         for (int j = 0; j < 3; j++)
         {
             cout<<"Valor do Vetor["<<i<<"]["<<j<<"]: "; cin>>vetor[i][j];
+            for(int j = 0; j < 3; j++)
+                if (vetor[i][j] == ' ') vetor[i][j] = '\0';
             break;
         }
 
