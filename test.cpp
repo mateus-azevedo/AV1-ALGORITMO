@@ -16,8 +16,8 @@ int main()
     //char v[2][3];
     /*
             vetor               vetor2
-        linha 1 {1, 2, 3}   linha 1 {6, 5, 4}
-        linha 2 {4, 5, 6}   linha 2 {3, 2, 1}
+        linha 1 {1, 2, 3}   linha 1 {6 5 4}
+        linha 2 {4, 5, 6}   linha 2 {3 2 1}
     */
     
     inicializaVetor(vetor);
