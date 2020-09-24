@@ -7,9 +7,12 @@
 using namespace std;
 
 /*
-Faça um programa para armazenar, através do uso de registros, os dados de 50 produtos de uma empresa 
-(código, nome, preço e quantidade em estoque).
-Ao final, o programa deve exibir os dados do(s) produto(s) mais caro(s).
+                NOMES                       MATRICULA
+    Jhonatha Vinicius de Oliveira Silva     2020101275
+    Mateus Santos de Azevedo                2020100086
+    Rhuan Gonzaga Cunha Francisco           2020100052
+    Victor Alberto dos Santos Dionizio      2020101250
+    Vinícius Silva de Oliveira              2020101398
 */
 
 struct produto{

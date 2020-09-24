@@ -3,6 +3,15 @@
 #define MAX 5
 using namespace std;
 
+/*
+                NOMES                       MATRICULA
+    Jhonatha Vinicius de Oliveira Silva     2020101275
+    Mateus Santos de Azevedo                2020100086
+    Rhuan Gonzaga Cunha Francisco           2020100052
+    Victor Alberto dos Santos Dionizio      2020101250
+    Vinícius Silva de Oliveira              2020101398
+*/
+
 void atribuiValores(int *A, int *B, int *C, int *D)
 {
     for(int i = 0; i < MAX; i++)
