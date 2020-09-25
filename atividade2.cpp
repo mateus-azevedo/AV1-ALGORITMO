@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<iostream>
-#define MAX 3
+#define MAX 50
 #define MAX_NOME 51
 
 using namespace std;
